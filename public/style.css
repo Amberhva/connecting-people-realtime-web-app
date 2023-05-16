@@ -1,0 +1,198 @@
+/* Montserrat */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+body {
+    font-family: var(--body-font);
+    background-color: var(--wit);
+}
+
+:root {
+    /* CUSTOM PROPERTIES */
+    /* Colours for specific allergies */
+    --walnoot-kleur: #cd9540;
+    --amandel-kleur: #f1c17e;
+    --cashewnoot-kleur: #e68460;
+    --ei-kleur: #f4eb34;
+    --vis-kleur: #daeeee;
+    --hazelnoot-kleur: #baddce;
+    --pinda-kleur: #72afa6;
+    --schelp-kleur: #f1c8ba;
+    --soja-kleur: #eae3d2;
+
+    /* Primaire kleuren */
+    --donkerblauw: #152a45;
+    --wit: #ffffff;
+    --zwart: #121212;
+    --grijs: #888682;
+    --mini-nav-grijs: #a9a1a1;
+    --licht-grijs: #eaeaea;
+
+    /* Font Family */
+    --body-font: "Montserrat";
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+/* Header zenit*/   
+.zenit{
+    width: 100%; 
+    height: 3rem;
+    background-color: var(--ei-kleur);
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.para{
+color: var(zwart);
+font-size: 16px;
+padding-top: 1rem;
+font-weight: 300;
+text-transform: uppercase;
+text-align: center;
+align-items: center;
+
+}
+/* NAV + LOGO */
+.logo {
+    width: 85%;
+    height: auto;
+    justify-content: flex-start;
+    display: flex;
+}
+
+nav{
+    display: flex; 
+    flex-flow:row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    width: 100vw;
+    box-shadow: -1px 0px 8px rgba(14, 55, 63, 0.15);
+
+}
+
+.nav-links{
+    flex: 1;
+    text-align: center;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 2em;
+    position: relative;
+    letter-spacing: 0.1em;
+}
+
+.nav-links ul li a{
+    color: var(--zwart);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 16px;
+
+}
+
+.nav-links ul li a:hover{
+    color: var(--pinda-kleur);
+}
+.navbar a {
+    text-align: center;
+    color: var(--zwart);
+    text-decoration: none;
+    font-size: 25px;
+    padding:15px;
+
+}
+.navbar a:hover {
+    color: var(--pinda-kleur);
+ }
+
+  /* Responsive nav*/
+ @media screen and (max-width: 767px) {
+    .nav-menu {
+        position: fixed;
+        background-color: var(--wit);
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
+        padding: 3rem;
+        transition: .4s;
+        z-index: 5;
+    }
+    .para{
+        font-size: 12px;
+    }
+    .nav-links ul li{
+        font-size: 10px;
+    }
+}
+
+/* Footer*/
+.footer {
+    background-color: var(--pinda-kleur);
+    padding: 1em 1em;
+  }
+  
+  .footer-title {
+    color: var(--wit);
+    margin-bottom: 0.8em;
+    margin-top: 2em;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: var(--wit);
+    font-weight: 300;
+    line-height: 2.5;
+  }
+
+  /* Responsive footer*/
+@media screen and (min-width: 1024px) {
+
+    footer {
+       width: 100vw;
+       margin-top: 2em;
+     }
+   
+     .footer-container {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       justify-items: center;
+       margin-bottom: 2em;
+     }
+   
+     .footer-title {
+       font-size: 1.5em;
+     }
+   
+     .footer-link {
+       font-size: 1.1em;
+       line-height: 2.5em;
+     }
+   
+     .copyright {
+       font-size: 1em;
+       margin-left: 15em;
+     }
+   
+   
+   }
+    /*loader */
+   #preloader{
+       background: #E5EFF1 url(img/ezgif.com-gif-maker.webp) no-repeat center center;
+       background-size: 13%;
+       width: 100%;
+       height: 100vh;
+       position: fixed;
+       z-index: 100;
+   
+   
+   }
