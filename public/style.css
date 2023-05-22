@@ -49,21 +49,19 @@ body {
 }
 
 .para{
-color: var(zwart);
-font-size: 16px;
-padding-top: 1rem;
-font-weight: 300;
-text-transform: uppercase;
-text-align: center;
-align-items: center;
-
+    color: var(zwart);
+    font-size: 16px;
+    padding-top: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
 }
 /* NAV + LOGO */
 .logo {
     width: 85%;
     height: auto;
-    justify-content: flex-start;
-    display: flex;
+    padding-left: 36px;
+
 }
 
 nav{
@@ -71,8 +69,8 @@ nav{
     flex-flow:row nowrap;
     justify-content: space-around;
     align-items: center;
-    background-color: #fff;
     width: 100vw;
+    height: 8rem;
     box-shadow: -1px 0px 8px rgba(14, 55, 63, 0.15);
 
 }
@@ -83,17 +81,19 @@ nav{
 }
 
 .nav-links ul li{
-    list-style: none;
+   list-style: none;
     display: inline-block;
     padding: 2em;
     position: relative;
     letter-spacing: 0.1em;
+    font-size: 16px;
+    font-weight: lighter;
 }
 
 .nav-links ul li a{
     color: var(--zwart);
     text-decoration: none;
-    font-weight: 300;
+    font-weight: lighter;
     font-size: 16px;
 
 }
@@ -107,11 +107,14 @@ nav{
     text-decoration: none;
     font-size: 25px;
     padding:15px;
+    padding-right: 56px;
+
 
 }
 .navbar a:hover {
     color: var(--pinda-kleur);
  }
+
 
   /* Responsive nav*/
  @media screen and (max-width: 767px) {
@@ -137,19 +140,19 @@ nav{
 
 /* Footer*/
 .footer {
-    background-color: var(--pinda-kleur);
+    background-color: #eeeeee7d;
     padding: 1em 1em;
   }
   
   .footer-title {
-    color: var(--wit);
+    color: var(--pinda-kleur);
     margin-bottom: 0.8em;
     margin-top: 2em;
   }
   
   .footer-link {
     text-decoration: none;
-    color: var(--wit);
+    color: var(--donkerblauw);
     font-weight: 300;
     line-height: 2.5;
   }
