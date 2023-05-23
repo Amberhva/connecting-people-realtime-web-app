@@ -24,7 +24,7 @@ body {
     --wit: #ffffff;
     --zwart: #121212;
     --grijs: #888682;
-    --mini-nav-grijs: #a9a1a1;
+    --mini-nav-grijs: #eeeeee7d;;
     --licht-grijs: #eaeaea;
 
     /* Font Family */
@@ -32,9 +32,8 @@ body {
 }
 
 *{
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
 
 }
 
@@ -60,8 +59,7 @@ body {
 .logo {
     width: 85%;
     height: auto;
-    padding-left: 36px;
-
+    padding-left: 25px;
 }
 
 nav{
@@ -114,7 +112,166 @@ nav{
 .navbar a:hover {
     color: var(--pinda-kleur);
  }
+/* sidebar icon */
+ .sidebar {
 
+    width: 200px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 16px;
+
+  }
+  
+  .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--pinda-kleur);
+    display: block;
+  }
+  .sidebar i{
+    font-size: 30px;
+
+  }
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+/* titel */
+h1{
+  text-align: center;
+  margin-top: 2.5rem;
+  color: var(--pinda-kleur);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+/* content post*/
+  .container {
+    box-shadow: -1px 2px 3px 3px rgba(14, 55, 63, 0.15);
+    background-color: var(--mini-nav-grijs);
+    border-radius: 5px;
+    padding: 16px;
+    margin: 27px 0
+    
+
+  }
+
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .container img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  .container span {
+    font-size: 20px;
+    margin-right: 15px;
+    color: var(--pinda-kleur);
+    font-weight: bold;
+  }
+
+/* nieuwsbrief zenit */
+form {
+  border: 3px solid rgb(255, 255, 255);
+}
+h6{
+color:var(--pinda-kleur);
+text-align:center;
+font-size:25px;
+font-weight: bolder;
+margin-bottom: 0.5em;
+}
+.nieuws{
+color:var(--zwart);
+text-align:center;
+font-size:16px;
+}
+.containerz {
+  padding: 20px;
+}
+
+input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=checkbox] {
+  margin-top: 16px;
+ 
+}
+label{
+ font-size:16px;
+ }
+input[type=submit] {
+  background-color: var(--pinda-kleur);
+  color: var(--wit);
+  font-size: 16px;
+ border-radius: 25px; 
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+  /* Footer*/
+.footer {
+    background-color: var(--mini-nav-grijs);
+    padding: 1em 1em;
+  }
+  
+  .footer-title {
+    color: var(--pinda-kleur);
+    margin-bottom: 0.8em;
+    margin-top: 2em;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: var(--donkerblauw);
+    font-weight: 300;
+    line-height: 2.5;
+  }
+    /* Responsive post */
+  @media (max-width: 500px) {
+    .container {
+        text-align: center;
+    }
+    .container img {
+        margin: auto;
+        float: none;
+        display: block;
+    }
+  }
+    /* Responsive sidenav*/
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
 
   /* Responsive nav*/
  @media screen and (max-width: 767px) {
@@ -138,24 +295,7 @@ nav{
     }
 }
 
-/* Footer*/
-.footer {
-    background-color: #eeeeee7d;
-    padding: 1em 1em;
-  }
-  
-  .footer-title {
-    color: var(--pinda-kleur);
-    margin-bottom: 0.8em;
-    margin-top: 2em;
-  }
-  
-  .footer-link {
-    text-decoration: none;
-    color: var(--donkerblauw);
-    font-weight: 300;
-    line-height: 2.5;
-  }
+
 
   /* Responsive footer*/
 @media screen and (min-width: 1024px) {
