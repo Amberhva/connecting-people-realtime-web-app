@@ -36,7 +36,24 @@ body {
   overflow-x: hidden;
 
 }
+/* Header zenit*/   
+.zenit{
+  width: 100%; 
+  height: 3rem;
+  background-color: var(--ei-kleur);
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 
+.para{
+  color: var(zwart);
+  font-size: 16px;
+  padding-top: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: lighter;
+}
 
 /* NAV + LOGO */
 .logo {
@@ -97,7 +114,6 @@ nav{
  }
 /* sidebar icon */
  .sidebar {
-
     width: 200px;
     z-index: 1;
     top: 0;
@@ -250,8 +266,11 @@ input[type=submit]:hover {
       position: relative;
 
     }
-    .sidebar a {float: left;}
+    .sidebar a {
+      float: left;
+    }
     div.content {margin-left: 0;}
+  
   }
   
   @media screen and (max-width: 400px) {
@@ -259,6 +278,7 @@ input[type=submit]:hover {
       text-align: center;
       float: none;
     }
+
   }
 
   /* Responsive nav*/
@@ -316,14 +336,4 @@ input[type=submit]:hover {
    
    
    }
-    /*loader */
-   #preloader{
-       background: #E5EFF1 url(img/ezgif.com-gif-maker.webp) no-repeat center center;
-       background-size: 13%;
-       width: 100%;
-       height: 100vh;
-       position: fixed;
-       z-index: 100;
-   
-   
-   }
+ 
