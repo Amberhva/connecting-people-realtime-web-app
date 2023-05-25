@@ -9,7 +9,35 @@
 </div>
 <!--titel-->
 <h1>Deel je ervaring en chat met andere ouders.</h1>
-<!--content post-->
+
+<div class="container">
+  <picture>
+    <source
+      type="image/webp"
+      data-srcset="lazy_400.webp 400w, 
+        lazy_800.webp 800w"
+      data-sizes="100w"
+
+    />
+    <img
+    src="/img/sara.webp"
+      alt="Avatar"
+      data-src="lazy.jpg"
+      data-srcset="lazy_400.jpg 400w, 
+        lazy_800.jpg 800w"
+      data-sizes="100w"
+      style="width:80px"
+    />
+  </picture>
+  <p><span>Sara</span></p>
+  <div class="post">
+  <input
+        type="text"
+        placeholder= "Wat wilt u vertellen?"/>
+  </div>
+</div>
+
+
 <div class="container">
   <picture>
     <source
@@ -31,7 +59,7 @@
   </picture>
 
   <p><span>Vini Mini</span>CEO</p>
-  <p>Nieuw bij Vini Mini ouders kunnen nu met elkaar chatten en uw ervaring met elkaar delen</p>
+  <p>Nieuw bij Vini Mini ouders kunnen nu met elkaar chatten en hun ervaring met elkaar delen</p>
   <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
   <a href="/chat.ejs"><i class="fa fa-commenting-o " aria-hidden="true"></i></a>
   <a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i></a>
@@ -127,5 +155,4 @@
      <a href="/chat.ejs"><i class="fa fa-commenting-o " aria-hidden="true"></i></a>
      <a href="#"><i class="fa fa-share-square-o" aria-hidden="true"></i></a>
 </div>
-
 <%- include('./partials/foot.ejs') %>
