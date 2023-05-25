@@ -17,6 +17,12 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
+// Route voor de community page
+app.get('/community', function (req, res) {
+  // res.send('Hello World!')
+  res.render('community')
+})
+
 // Stel het poortnummer in waar express op gaat luisteren
 app.set('port', process.env.PORT || 8000)
 
