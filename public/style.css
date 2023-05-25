@@ -186,19 +186,17 @@ form {
 
 }
 h6{
-color:var(--pinda-kleur);
-text-align:center;
+color:var(--donkerblauw);
 font-size:25px;
 font-weight: bolder;
 margin-bottom: 0.5em;
 }
 .nieuws{
-color:var(--zwart);
-text-align:center;
+color:var(--donkerblauw);
 font-size:16px;
 }
 .containerz {
-  padding: 20px;
+  margin: 1rem;
 }
 
 input[type=text], input[type=submit] {
@@ -218,14 +216,15 @@ label{
  font-size:16px;
  }
 input[type=submit] {
-  background-color: var(--pinda-kleur);
-  color: var(--wit);
+  background-color: var(--hazelnoot-kleur);
+  color: var(--donkerblauw);
   font-size: 16px;
  border-radius: 25px; 
 }
 
-input[type=submit]:hover {
-  opacity: 0.8;
+a.index-community-button:hover, input[type=submit]:hover {
+  color:var(--soja-kleur);
+  background-color: var(--donkerblauw);
 }
 
 
@@ -248,8 +247,12 @@ main.main-index{
   position: absolute;
 }
 
-/* h1 tekst */
+/* desktop image */
+.index-extra-image-container, .index-desktop-img{
+  display:none;
+}
 
+/* h1 tekst */
 h1.index-h1{
   margin: 1rem;
   text-align: left;
@@ -262,7 +265,6 @@ h1.index-h1{
 }
 
 /* community button */
-
 a.index-community-button{
   padding:12px;
   text-decoration: none;
@@ -274,17 +276,70 @@ a.index-community-button{
   margin: 1rem;
   text-align: center;
   border:none;
-  /* font-size: 1rem; */
-  /* cursor: pointer; */
-  /* box-sizing: border-box; */
-
 }
 
+/* Mediaqueries Roelie voor index.ejs */
 
+@media screen and (min-width: 50em){
+  .index-img-container{
+    width:50%;
+    padding-bottom: calc(50% / (375 / 250));
+  }
+  article.index-community{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .desktop-index-container{
+    display:flex;
+  }
+ 
+  /* Nieuwsbrief gedeelte */
+  form{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+ 
+  /* Desktop image */
+  .index-desktop-img{
+    object-fit: cover;
+    position: absolute;
+    display: inline-block;
+  }
 
+  /* desktop image */
+  .index-extra-img-container{
+    display:inline-block;
+    width: 50%;
+    height: 0;
+    position: relative;
+    padding-bottom: calc(50% / (960 / 640)); /* Berekening van de aspectverhouding */
+    overflow: hidden;
 
+  }
+}
+@media screen and (min-width: 75em){
+  
+  /* index tekst */
+  .index-h1{
+    font-size: 2.2rem;
+  }
+  .index-p{
+    font-size: 2rem;
+  }
+}
 
-
+@media screen and (min-width: 95em){
+  /* form */
+  .index-input{
+    position: relative;
+    top:-5rem;
+  }
+}
+  
 
 
 
