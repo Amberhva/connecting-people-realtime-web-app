@@ -23,6 +23,12 @@ app.get('/community', function (req, res) {
   res.render('community')
 })
 
+// Route voor de chat
+app.get('/chat', function (req, res) {
+  // res.send('Hello World!')
+  res.render('chat')
+})
+
 // Stel het poortnummer in waar express op gaat luisteren
 app.set('port', process.env.PORT || 8000)
 
