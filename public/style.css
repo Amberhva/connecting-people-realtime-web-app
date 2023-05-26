@@ -129,7 +129,7 @@ nav{
     font-size: 30px;
   }
   .sidebar a:hover {
-    color: #f1f1f1;
+    color: var(--donkerblauw);
   }
 /* titel */
 h1{
@@ -189,6 +189,7 @@ h1{
     border: 1px solid #ccc;
     box-sizing: border-box;
     margin-right: 85px;
+    font-size: 16px;
 }
 
 /* nieuwsbrief zenit */
