@@ -29,11 +29,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body {
     font-family: var(--body-font);
-    background-color: var(--pinda-kleur);
     color: var(--donkerblauw);
 }
 
@@ -123,7 +124,7 @@ body {
     background-color: var(--wit);
     border-radius: 2em 2em 0 0;
     width: 100vw;
-    height: 100vh;
+    max-height: fit-content;
 }
 
 .message-field {
@@ -162,4 +163,13 @@ body {
 
 .send i {
     margin-left: -0.2em;
+}
+.messages{
+margin-top: 1em;
+padding: 0.1em 1em;
+color: var(--wit);
+background-color: var(--hazelnoot-kleur);
+border-radius: 1em;
+width: max-content;
+list-style: none;
 }

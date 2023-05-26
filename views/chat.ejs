@@ -71,9 +71,11 @@
         <!-- Main start -->
         <main class="chatroom">
             <section class="chat">
-                <ul class="messages"></ul>
+                <ul class="message"></ul>
                 <form class="message-field">
-                    <input type="text" autocomplete="off" class="textfield" placeholder="Typ een bericht..." />
+                    <label for="handle">Gebruikersnaam</label>
+                    <input id="handle" type="text" name="handle" />
+                    <input id="message" type="text" autocomplete="off" class="textfield" placeholder="Typ een bericht..." />
                     <button class="send"><i class="fa-regular fa-paper-plane" style="color: #ffffff"></i></button>
                 </form>
             </section>
