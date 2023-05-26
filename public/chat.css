@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+:root {
+    /* CUSTOM PROPERTIES */
+    /* Colours for specific allergies */
+    --walnoot-kleur: #cd9540;
+    --amandel-kleur: #f1c17e;
+    --cashewnoot-kleur: #e68460;
+    --ei-kleur: #f4eb34;
+    --vis-kleur: #daeeee;
+    --hazelnoot-kleur: #baddce;
+    --pinda-kleur: #72afa6;
+    --schelp-kleur: #f1c8ba;
+    --soja-kleur: #eae3d2;
+
+    /* Primaire kleuren */
+    --donkerblauw: #152a45;
+    --wit: #ffffff;
+    --zwart: #121212;
+    --grijs: #888682;
+    --mini-nav-grijs: #eeeeee7d;
+    --licht-grijs: #eaeaea;
+
+    /* Font Family */
+    --body-font: "Montserrat";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--pinda-kleur);
+    color: var(--donkerblauw);
+}
+
+/* NAVIGATION */
+.logo-vini-mini {
+    max-width: 100%;
+    height: auto;
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--wit);
+}
+
+.upper-nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-top: 1em;
+}
+
+.upper-nav-items li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 1em 0 0;
+}
+
+.upper-nav-items li i {
+    font-size: 1.3em;
+    margin-bottom: 0.2em;
+}
+
+.upper-nav-items span {
+    font-size: 0.9em;
+}
+
+/* Sub-navigation */
+.sub-nav-items {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--wit);
+}
+
+.sub-nav-items li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1em 1em 0.5em 1em;
+}
+
+.sub-nav-items li i {
+    font-size: 1.3em;
+}
+
+.sub-nav-items span {
+    font-size: 0.7em;
+}
+
+/* HEADER */
+.information {
+    color: var(--wit);
+    background-color: var(--pinda-kleur);
+}
+
+.chat-title {
+    font-size: 1.3em;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+.online {
+    font-size: 1em;
+    padding: 0 1em 1em 1em;
+}
+
+/* MAIN SECION */
+.chat {
+    background-color: var(--wit);
+    border-radius: 2em 2em 0 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.message-field {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    max-width: 100%;
+}
+
+.textfield {
+    background-color: var(--licht-grijs);
+    border: none;
+    width: 80vw;
+    height: 3em;
+    border-radius: 2em;
+    margin-left: 0.7em;
+}
+
+.textfield::placeholder {
+    text-indent: 1em;
+}
+
+.textfield:focus {
+    text-indent: 1em;
+    outline: none;
+    caret-color: var(--donkerblauw);
+}
+
+.send {
+    background-color: var(--pinda-kleur);
+    border: none;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+}
+
+.send i {
+    margin-left: -0.2em;
+}
