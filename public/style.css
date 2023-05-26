@@ -208,7 +208,7 @@ margin-bottom: 0.5em;
 color:var(--donkerblauw);
 font-size:16px;
 }
-.containerz {
+.container-nieuwsbrief {
   margin: 1rem;
 }
 
@@ -355,7 +355,7 @@ a.index-community-button{
 }
 
   /* Footer*/
-.footer {
+.footer-container {
     background-color: var(--mini-nav-grijs);
     padding: 1em 1em;
   }
