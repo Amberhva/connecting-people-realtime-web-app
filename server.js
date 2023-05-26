@@ -1,39 +1,58 @@
-// Importeer express uit de node_modules map
+import * as path from 'path'
+
+import { Server } from 'socket.io'
+import { createServer } from 'http'
 import express from 'express'
 
-// Maak een nieuwe express app aan
 const app = express()
+const http = createServer(app)
+const ioServer = new Server(http)
 
+const port = process.env.PORT || 8000
 // Stel ejs in als template engine en geef de 'views' map door
+
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
 // Gebruik de map 'public' voor statische resources
 app.use(express.static('public'))
-
 // Maak een route voor de index
 app.get('/', function (req, res) {
-  // res.send('Hello World!')
   res.render('index')
 })
 
 // Route voor de community page
 app.get('/community', function (req, res) {
-  // res.send('Hello World!')
   res.render('community')
 })
 
 // Route voor de chat
 app.get('/chat', function (req, res) {
-  // res.send('Hello World!')
   res.render('chat')
 })
+app.use(express.static(path.resolve('public')))
+// Start de socket.io server op
+ioServer.on('connection', (client) => {
+  // Log de connectie naar console
+  console.log(`user ${client.id} connected`)
 
-// Stel het poortnummer in waar express op gaat luisteren
-app.set('port', process.env.PORT || 8000)
+  // Luister naar een message van een gebruiker
+  client.on('message', (message) => {
+    // Log het ontvangen bericht
+    console.log(`user ${client.id} sent message: ${message}`)
 
-// Start express op, haal het ingestelde poortnummer op
-app.listen(app.get('port'), function () {
-  // Toon een bericht in de console en geef het poortnummer door
-  console.log(`Application started on http://localhost:${app.get('port')}`)
+    // Verstuur het bericht naar alle clients
+    ioServer.emit('message', message)
+  }) 
+
+  // Luister naar een disconnect van een gebruiker
+  client.on('disconnect', () => {
+    // Log de disconnect
+    console.log(`user ${client.id} disconnected`)
+  })
+})
+
+// Start een http server op het ingestelde poortnummer en log de url
+http.listen(port, () => {
+  console.log('listening on http://localhost:' + port)
 })
