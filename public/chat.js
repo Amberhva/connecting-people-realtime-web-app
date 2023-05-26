@@ -7,6 +7,8 @@ inputField.addEventListener("blur", function () {
     inputField.setAttribute("placeholder", "Typ een bericht...");
 });
 
+console.log('hoi')
+
 // Socket.io
 let socket = io();
 let messages = document.querySelector(".chat ul");
