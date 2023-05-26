@@ -9,7 +9,7 @@ inputField.addEventListener("blur", function () {
 
 // Socket.io
 let socket = io();
-let messages = document.querySelector("section ul");
+let messages = document.querySelector(".chat ul");
 let input = document.querySelector("input");
 
 document.querySelector("form").addEventListener("submit", (event) => {
