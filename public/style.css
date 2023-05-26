@@ -104,11 +104,8 @@ nav{
     text-align: center;
     color: var(--zwart);
     text-decoration: none;
-    font-size: 25px;
-    padding:15px;
-    padding-right: 56px;
-
-
+    font-size: 22px;
+    padding-right: 30px;
 }
 .navbar a:hover {
     color: var(--pinda-kleur);
@@ -116,11 +113,8 @@ nav{
 /* sidebar icon */
  .sidebar {
     width: 200px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 16px;
+    padding-top: 30px;
+    padding-left: 15px;
   }
   
   .sidebar a {
@@ -135,32 +129,39 @@ nav{
     font-size: 30px;
   }
   .sidebar a:hover {
-    color: #f1f1f1;
+    color: var(--donkerblauw);
   }
 /* titel */
 h1{
-  text-align: center;
-  margin-top: 2.5rem;
+  text-align: center; 
+  margin-top: -11.5rem;
+  margin-bottom: 2rem;
   color: var(--pinda-kleur);
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: bolder;
+ 
 }
-/* content post*/
-  .container {
-    box-shadow: -1px 2px 3px 3px rgba(14, 55, 63, 0.15);
-    background-color: var(--mini-nav-grijs);
-    border-radius: 5px;
-    padding: 16px;
-    margin: 27px 0
-  }
 
-  .container::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
+
+/* content post*/
+
+.container {
+  box-shadow: -1px 2px 3px 3px rgba(14, 55, 63, 0.15);
+  background-color: var(--mini-nav-grijs);
+  border-radius: 20px;
+  padding: 16px;
+  margin:auto;
+  max-width: 60rem;
+  margin-bottom: 40px;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
   .container img {
     float: left;
     margin-right: 20px;
@@ -179,6 +180,18 @@ h1{
   margin-right: 25px ;
   color: var(--pinda-kleur);
 }
+
+.post input[type=text]{
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 85px;
+    font-size: 16px;
+}
+
 /* nieuwsbrief zenit */
 form {
   border: 3px solid rgb(255, 255, 255);
@@ -186,19 +199,17 @@ form {
 
 }
 h6{
-color:var(--pinda-kleur);
-text-align:center;
+color:var(--donkerblauw);
 font-size:25px;
 font-weight: bolder;
 margin-bottom: 0.5em;
 }
 .nieuws{
-color:var(--zwart);
-text-align:center;
+color:var(--donkerblauw);
 font-size:16px;
 }
 .containerz {
-  padding: 20px;
+  margin: 1rem;
 }
 
 input[type=text], input[type=submit] {
@@ -218,14 +229,15 @@ label{
  font-size:16px;
  }
 input[type=submit] {
-  background-color: var(--pinda-kleur);
-  color: var(--wit);
+  background-color: var(--hazelnoot-kleur);
+  color: var(--donkerblauw);
   font-size: 16px;
  border-radius: 25px; 
 }
 
-input[type=submit]:hover {
-  opacity: 0.8;
+a.index-community-button:hover, input[type=submit]:hover {
+  color:var(--soja-kleur);
+  background-color: var(--donkerblauw);
 }
 
 
@@ -234,6 +246,7 @@ input[type=submit]:hover {
 main.main-index{
   width:100%;
 }
+
 
 /* index img */
 .index-img-container{
@@ -248,8 +261,12 @@ main.main-index{
   position: absolute;
 }
 
-/* h1 tekst */
+/* desktop image */
+.index-extra-image-container, .index-desktop-img{
+  display:none;
+}
 
+/* h1 tekst */
 h1.index-h1{
   margin: 1rem;
   text-align: left;
@@ -262,7 +279,6 @@ h1.index-h1{
 }
 
 /* community button */
-
 a.index-community-button{
   padding:12px;
   text-decoration: none;
@@ -274,24 +290,69 @@ a.index-community-button{
   margin: 1rem;
   text-align: center;
   border:none;
-  /* font-size: 1rem; */
-  /* cursor: pointer; */
-  /* box-sizing: border-box; */
-
 }
 
+/* Mediaqueries Roelie voor index.ejs */
 
+@media screen and (min-width: 50em){
+  .index-img-container{
+    width:50%;
+    padding-bottom: calc(50% / (375 / 250));
+  }
+  article.index-community{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .desktop-index-container{
+    display:flex;
+  }
+ 
+  /* Nieuwsbrief gedeelte */
+  form{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+ 
+  /* Desktop image */
+  .index-desktop-img{
+    object-fit: cover;
+    position: absolute;
+    display: inline-block;
+  }
 
+  /* desktop image */
+  .index-extra-img-container{
+    display:inline-block;
+    width: 50%;
+    height: 0;
+    position: relative;
+    padding-bottom: calc(50% / (960 / 640)); /* Berekening van de aspectverhouding */
+    overflow: hidden;
 
+  }
+}
+@media screen and (min-width: 75em){
+  
+  /* index tekst */
+  .index-h1{
+    font-size: 2.2rem;
+  }
+  .index-p{
+    font-size: 2rem;
+  }
+}
 
-
-
-
-
-
-
-
-
+@media screen and (min-width: 95em){
+  /* form */
+  .index-input{
+    position: relative;
+    top:-5rem;
+  }
+}
 
   /* Footer*/
 .footer {
@@ -313,8 +374,12 @@ a.index-community-button{
   }
     /* Responsive post */
   @media (max-width: 500px) {
-      .container {
-        text-align: justify;
+h1{
+  margin: 0;
+}
+    .container {
+      text-align: justify;
+      margin-inline: -1px;
     }
 .container span{
   text-align: center;
@@ -327,27 +392,48 @@ a.index-community-button{
    
   }
     /* Responsive sidenav*/
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 770px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    h1{
+      margin: 0;
+    }
+  }
+  .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+
+  
+  @media screen and (max-width: 400px) {
     .sidebar {
       width: 100%;
       height: auto;
       position: relative;
 
     }
-  }
-  .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  
-  
-  
-  @media screen and (max-width: 400px) {
     .sidebar a {
       text-align: center;
       float: none;
       text-indent: 50px;
       text-align: justify;
     }
+    h1{
+      margin: 0;
+    }
 
+  }
+  @media screen and (max-width: 320px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    h1{
+      margin: 0;
+    }
+ 
   }
 
   /* Responsive nav*/
@@ -370,6 +456,7 @@ a.index-community-button{
     .nav-links ul li{
         font-size: 10px;
     }
+ 
 }
 
 

@@ -2,26 +2,24 @@
 
 <main class="main-index">
 
-<div class="index-img-container">
-    <img class="index-img" alt="Vini Mini" src="https://cdn.shopify.com/s/files/1/0530/6718/6365/files/MG_5012_960x640.jpg?v=1642663774" width="100%" height="100%" >
-</div>
 
-<article>
-    <h1 class="index-h1">Wordt lid van de Vini Mini community!</h1></main>
-    <p class="index-p">Hier maakt u contact met andere ouders en kunt u allergie onderwerpen bespreken.</p>
-</article>
+<section class="desktop-index-container">
+  <div class="index-img-container">
+      <img class="index-img" alt="Vini Mini" src="https://cdn.shopify.com/s/files/1/0530/6718/6365/files/MG_5012_960x640.jpg?v=1642663774" width="100%" height="100%" >
+  </div>
 
-<!-- Naar de community knop -->
-  <a href="community" class="index-community-button">NAAR DE COMMUNITY</a>
-
-
-
-
-
-
+  <article class="index-community">
+      <h1 class="index-h1">Wordt lid van de Vini Mini community!</h1>
+      <p class="index-p">Hier maakt u contact met andere ouders en kunt u allergie onderwerpen bespreken.</p>
+      <!-- Naar de community knop -->
+      <a href="community" class="index-community-button">NAAR DE COMMUNITY</a>
+  </article>
+</section>
 
 
   <!--Nieuwsbrief-->
+<section class="desktop-index-container">
+
   <form action="/action_page.php">
     <div class="containerz">
       <h6>Nieuwsbrief</h6>
@@ -29,11 +27,11 @@
   </p>
     </div>
   
-    <div class="containerz">
+    <div class="containerz index-input">
       <input type="text" placeholder="Name" name="name" required>
       <input type="text" placeholder="Email address" name="mail" required>
       <label>
-        <input type="checkbox" checked="checked" name="subscribe"> Onthoud Mij Gegevens
+        <input type="checkbox" checked="checked" name="subscribe"> Onthoud mijn gegevens
       </label>
     </div>
   
@@ -41,6 +39,12 @@
       <input type="submit" value="REGISTREER">
     </div>
   </form>
+
+  <div class="index-extra-img-container">
+    <img class="index-desktop-img" alt="Vini Mini opvolgkit" src="https://cdn.shopify.com/s/files/1/0530/6718/6365/files/opvolgkit_960x640.jpg?v=1643311258" width="100%" height="100%">
+  </div>
+
+</section>
 
 </main>
 <%- include('./partials/foot.ejs') %>
