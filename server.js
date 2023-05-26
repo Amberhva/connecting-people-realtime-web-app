@@ -9,6 +9,8 @@ const http = createServer(app)
 const ioServer = new Server(http)
 
 const port = process.env.PORT || 8000
+let count = 0
+
 // Stel ejs in als template engine en geef de 'views' map door
 
 app.set('view engine', 'ejs')
@@ -35,6 +37,8 @@ app.use(express.static(path.resolve('public')))
 ioServer.on('connection', (client) => {
   // Log de connectie naar console
   console.log(`user ${client.id} connected`)
+  count++
+  ioServer.emit('usercount', count)
 
   // Luister naar een message van een gebruiker
   client.on('message', (message) => {
@@ -49,10 +53,11 @@ ioServer.on('connection', (client) => {
   client.on('disconnect', () => {
     // Log de disconnect
     console.log(`user ${client.id} disconnected`)
+    count--
+    ioServer.emit('usercount', count)
   })
 })
 
-// Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {
   console.log('listening on http://localhost:' + port)
 })
