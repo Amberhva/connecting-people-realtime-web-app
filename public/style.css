@@ -175,10 +175,10 @@ h1{
     font-weight: bold;
   }
 .container a {
-  font-size: 35px;
-  text-align: center;
-  margin-right: 25px ;
-  color: var(--pinda-kleur);
+    font-size: 30px;
+    text-align: center;
+    margin-right: 25px ;
+    color: var(--pinda-kleur);
 }
 
 .post input[type=text]{
@@ -484,12 +484,5 @@ h1{
        font-size: 1.1em;
        line-height: 2.5em;
      }
-   
-     .copyright {
-       font-size: 1em;
-       margin-left: 15em;
-     }
-   
-   
-   }
+       }
  
