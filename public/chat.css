@@ -120,12 +120,20 @@ body {
 }
 
 /* MAIN SECION */
-.chat {
+section {
     /* background-color: var(--wit); */
     border-radius: 2em 2em 0 0;
     width: 100vw;
     max-height: fit-content;
 }
+section ul {
+    margin: 0;
+    padding: 1.1em;
+    list-style-type: none;
+    flex-grow: 2;
+    overflow-y: scroll;
+    height: 40rem;
+  }
 
 .message-field {
     position: absolute;
@@ -194,12 +202,41 @@ body {
 }
 
 /* The actual messages */
-.message li {
-    margin: 1em;
+.message-background {
     padding: 0.5em;
     color: var(--donkerblauw);
     background-color: rgba(114, 175, 166, 0.6);
-    border-radius: 2em;
+    border-radius: 1em;
     width: max-content;
     list-style: none;
+}
+  
+   /* tijd data opmaak*/
+  .time {
+    font-weight: 100;
+    color: var(--wit);
+  }
+   /* gebruiker naam verstuurd + position*/
+  .message-handle {
+    margin-top: 0.25em;
+    font-size: 0.7rem;
+    text-align: left;
+    color: var(--pinda-kleur);
+    margin-bottom: 10px;
+  }
+  #handle {
+    margin-bottom: 1em;
+  }
+  /* bericht in de gestuurde chat*/
+  .message-background>p {
+    text-align: left;
+    color: var(--wit);
+}
+  /* waneer gebruiker aan typen is opmaak*/
+p {
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--zwart);
+    margin-top: 0.5rem;
 }
