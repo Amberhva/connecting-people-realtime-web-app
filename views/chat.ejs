@@ -6,14 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Chatroom Vini Mini</title>
 
-    <!--   <link rel="stylesheet" href="/chat.css" />-->
+        <!-- Link to the stylesheet -->
+        <link rel="stylesheet" href="/chat.css" />
 
-    <link rel="stylesheet" href="/chat.css" />
-
-    <!-- Link to Fontawesome icons -->
-
-    <script src="https://kit.fontawesome.com/dbf182c521.js" crossorigin="anonymous"></script>
-
+        <!-- Link to Fontawesome icons -->
+        <script src="https://kit.fontawesome.com/dbf182c521.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <!-- Start navigation -->
@@ -63,8 +60,7 @@
         <!-- Header start -->
         <header class="information">
             <h1 class="chat-title">Chat met ouders en deel je ervaringen!</h1>
-            <h2 class="online">Aantal online: <span id="count">0</span> ouders online.</h2>
-
+            <h2 class="online">Aantal online: <span id="count">0</span> ouder(s) online.</h2>
         </header>
         <!-- Header end -->
 
@@ -73,14 +69,17 @@
             <section class="chat">
                 <ul class="message"></ul>
                 <form class="message-field">
-                    <label for="handle">Gebruikersnaam</label>
-                    <input id="handle" type="text" name="handle" />
-                    <input id="message" type="text" autocomplete="off" class="textfield" placeholder="Typ een bericht..." />
-                    <button class="send"><i class="fa-regular fa-paper-plane" style="color: #ffffff"></i></button>
+                    <label for="handle" class="title-username">Naam</label>
+                    <input id="handle" type="text" name="handle" class="username" placeholder="Vul een naam in..." />
+
+                    <div class="container">
+                        <input id="message" type="text" autocomplete="off" class="textfield" placeholder="Typ een bericht..." />
+                        <button class="send"><i class="fa-regular fa-paper-plane" style="color: #ffffff"></i></button>
+                    </div>
                 </form>
             </section>
         </main>
-         <!-- Link to the script -->
+        <!-- Link to the script -->
         <script src="/socket.io/socket.io.js" defer></script>
         <script src="/chat.js" defer></script>
     </body>
