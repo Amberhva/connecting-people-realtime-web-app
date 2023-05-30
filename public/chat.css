@@ -36,7 +36,6 @@
 body {
     font-family: var(--body-font);
     color: var(--donkerblauw);
-    background-color: var(--pinda-kleur);
 }
 
 /* NAVIGATION */
@@ -108,6 +107,7 @@ body {
 .information {
     color: var(--wit);
     background-color: var(--pinda-kleur);
+    border-radius: 0 0 1.5em 1.5em;
 }
 
 .chat-title {
@@ -121,25 +121,30 @@ body {
 }
 
 /* MAIN SECION */
-section {
+.chat {
     background-color: var(--wit);
     border-radius: 2em 2em 0 0;
     width: 100vw;
     max-height: fit-content;
 }
 
-section ul {
+.message {
     margin: 0;
     padding: 1.1em;
     list-style-type: none;
     flex-grow: 2;
     overflow-y: scroll;
-    height: 50vh;
+    height: 48vh;
+}
+
+.message-background > p {
+    max-width: 12em;
+    word-wrap: break-word;
 }
 
 .message-field {
-    /* position: absolute; */
-    /* bottom: 1em; */
+    position: absolute;
+    bottom: 1em;
     left: 0;
     max-width: 100%;
     background-color: white;
@@ -179,7 +184,7 @@ section ul {
     border-radius: 2em;
     margin-left: 0.7em;
     text-indent: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
 }
 
 .username::placeholder {
@@ -231,16 +236,12 @@ section ul {
     margin-bottom: 0.6em;
 }
 
-#handle {
-    margin-bottom: 1em;
-}
-
 /* bericht in de gestuurde chat */
 .message-background > p {
     text-align: left;
 }
 
-/* waneer gebruiker aan typen is opmaak*/
+/* When a user is typing */
 .typing {
     font-size: 1.5em;
     text-align: center;
@@ -249,13 +250,10 @@ section ul {
     margin-top: 0.5rem;
 }
 
-
 /* state messages/ helaas werkt dit nog niet normaal groetjes roelie */
-
-.empty{
-    display:none;
+.empty {
+    display: none;
 }
-.offline{
-    display:none;
+.offline {
+    display: none;
 }
-

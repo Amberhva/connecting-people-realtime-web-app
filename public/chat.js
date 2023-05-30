@@ -8,15 +8,14 @@ inputField.addEventListener("blur", function () {
 });
 
 // State messages
-const emptyState = document.querySelector('span.empty')
-const errorState = document.querySelector('span.offline')
-
+const emptyState = document.querySelector("span.empty");
+const errorState = document.querySelector("span.offline");
 
 // Socket.io
 
 /*gegevens ophalen van ejs*/
 let socket = io();
-let messages = document.querySelector("section ul");
+let messages = document.querySelector(".message");
 let input = document.querySelector("#message");
 let handle = document.querySelector("#handle");
 let feedback = document.querySelector("#feedback");
@@ -60,29 +59,21 @@ socket.on("usercount", (data) => {
     count.innerHTML = data;
 });
 
-
-
-
-
-
 function addMessage(message) {
-  
-  // Helaas lijkt de empty state niet te werken, wie snapt wat er fout is?
-  if (messages.children.length === 0) {
-    emptyState.style.display = "inline";
-  } else {
-    emptyState.style.display = "none";
-  } 
+    // Helaas lijkt de empty state niet te werken, wie snapt wat er fout is?
+    if (messages.children.length === 0) {
+        emptyState.style.display = "inline";
+    } else {
+        emptyState.style.display = "none";
+    }
 
-
-messages.appendChild(Object.assign(document.createElement("li"), { textContent: message }))
-messages.scrollTop = messages.scrollHeight;
+    messages.appendChild(Object.assign(document.createElement("li"), { textContent: message }));
+    messages.scrollTop = messages.scrollHeight;
 }
-
 
 // error state/ hoe kan ik dit testen?????
 // Er gaat iets mis bij het verbinden
-socket.on('error', (error) => {
-  emptyState.style.display = 'none'
-  errorState.style.display = 'inline'
-})
+socket.on("error", (error) => {
+    emptyState.style.display = "none";
+    errorState.style.display = "inline";
+});
