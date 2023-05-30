@@ -11,6 +11,7 @@ const ioServer = new Server(http)
 const port = process.env.PORT || 8000
 let count = 0
 
+
 // Stel ejs in als template engine en geef de 'views' map door
 
 app.set('view engine', 'ejs')
@@ -18,6 +19,7 @@ app.set('views', './views')
 
 // Gebruik de map 'public' voor statische resources
 app.use(express.static('public'))
+
 // Maak een route voor de index
 app.get('/', function (req, res) {
   res.render('index')
@@ -42,6 +44,7 @@ ioServer.on('connection', (socket) => {
 
   // Luister naar een message van een gebruiker
   socket.on('message', (message) => {
+   
     // Log het ontvangen bericht
     console.log(`user ${socket.id} sent message: ${message}`)
 

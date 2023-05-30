@@ -134,14 +134,15 @@ section ul {
     list-style-type: none;
     flex-grow: 2;
     overflow-y: scroll;
-    height: 40rem;
+    height: 50vh;
 }
 
 .message-field {
-    position: absolute;
-    bottom: 1em;
+    /* position: absolute; */
+    /* bottom: 1em; */
     left: 0;
     max-width: 100%;
+    background-color: white;
 }
 
 /* Input field for the messages */
@@ -244,6 +245,17 @@ section ul {
     font-size: 1.5em;
     text-align: center;
     line-height: 1.5;
-    color: var(--donkerblauw);
-    margin-top: 1em;
+    color: var(--zwart);
+    margin-top: 0.5rem;
 }
+
+
+/* state messages/ helaas werkt dit nog niet normaal groetjes roelie */
+
+.empty{
+    display:none;
+}
+.offline{
+    display:none;
+}
+

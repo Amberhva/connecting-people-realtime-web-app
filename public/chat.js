@@ -6,6 +6,12 @@ inputField.addEventListener("focus", function () {
 inputField.addEventListener("blur", function () {
     inputField.setAttribute("placeholder", "Typ een bericht...");
 });
+
+// State messages
+const emptyState = document.querySelector('span.empty')
+const errorState = document.querySelector('span.offline')
+
+
 // Socket.io
 
 /*gegevens ophalen van ejs*/
@@ -54,7 +60,29 @@ socket.on("usercount", (data) => {
     count.innerHTML = data;
 });
 
+
+
+
+
+
 function addMessage(message) {
-    messages.appendChild(Object.assign(document.createElement("li"), { textContent: message }));
-    messages.scrollTop = messages.scrollHeight;
+  
+  // Helaas lijkt de empty state niet te werken, wie snapt wat er fout is?
+  if (messages.children.length === 0) {
+    emptyState.style.display = "inline";
+  } else {
+    emptyState.style.display = "none";
+  } 
+
+
+messages.appendChild(Object.assign(document.createElement("li"), { textContent: message }))
+messages.scrollTop = messages.scrollHeight;
 }
+
+
+// error state/ hoe kan ik dit testen?????
+// Er gaat iets mis bij het verbinden
+socket.on('error', (error) => {
+  emptyState.style.display = 'none'
+  errorState.style.display = 'inline'
+})
