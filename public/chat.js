@@ -10,31 +10,48 @@ inputField.addEventListener("blur", function () {
 
 // Socket.io
 
+/*gegevens ophalen van ejs*/
 let socket = io()
 let messages = document.querySelector("section ul")
 let input = document.querySelector('#message')
 let handle = document.querySelector('#handle')
+let feedback =  document.querySelector('#feedback');
 let count =  document.querySelector('#count');
-document.querySelector("form").addEventListener("submit", (event) => {
+
+/*De form haal de bericht op die in de ejs staat via de server */
+document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault()
-  if (input.value) {
-    socket.emit("message", input.value)
-    input.value = ""
-  }
+    socket.emit('message', {
+    /*In de ejs haalt hij de waarde van de gebruiker op(gebruiksnaam) en de input(bericht)*/
+      input: input.value,
+      handle: handle.value,
+      /*haalt de tijd op mee mee te sturen met het bericht*/
+      time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) /*tijd bij de bericht*/
+  })
+/*De value is wat de gebruiker als bericht wilt sturen*/
+  input.value = ''
 })
-
-socket.on("message", (message) => {
-addMessage(message)
+/*bericht verstuurd met gebruiksnaam en tijd*/
+socket.on('message', data => {
+  feedback.innerHTML = ''
+  /*hier geeft ie aan hoe de layout eruit gaat zien waneer de bericht wordt gestuurd*/
+  messages.innerHTML += `
+  <div class="message-background">
+    <p class="time">${data.time}</p>
+    <p>${data.input}</p>
+  </div>
+  <h3 class="message-handle">${data.handle}</h3>
+  `
+/*section krijgt scrol functie voor de berichten*/
+  messages.scrollTop = messages.scrollHeight
 })
-
-socket.on("whatever", (message) => {
-addMessage(message)
+/*waneer gebruiker typt*/
+input.addEventListener('keypress', function(){
+  socket.emit('typing', handle.value)
 })
-
-socket.on("history", (history) => {
-history.forEach((message) => {
-  addMessage(message)
-})
+/*melding waneer andere gebruiker aan het typt is */
+socket.on('typing', data => {
+  feedback.innerHTML = `<p><em> ${data} typ een bericht...</em></p>`
 })
 socket.on('usercount', data => {
   count.innerHTML = data;
