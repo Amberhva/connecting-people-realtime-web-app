@@ -133,7 +133,7 @@ section ul {
     flex-grow: 2;
     overflow-y: scroll;
     height: 40rem;
-  }
+}
 
 .message-field {
     position: absolute;
@@ -150,6 +150,7 @@ section ul {
     height: 3em;
     border-radius: 2em;
     margin-left: 0.7em;
+    text-indent: 1em;
 }
 
 .textfield::placeholder {
@@ -210,31 +211,35 @@ section ul {
     width: max-content;
     list-style: none;
 }
-  
-   /* tijd data opmaak*/
-  .time {
-    font-weight: 100;
-    color: var(--wit);
-  }
-   /* gebruiker naam verstuurd + position*/
-  .message-handle {
+
+/* Time */
+.time {
+    font-size: 0.8em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Username position */
+.message-handle {
     margin-top: 0.25em;
-    font-size: 0.7rem;
+    font-size: 0.7em;
     text-align: left;
     color: var(--pinda-kleur);
-    margin-bottom: 10px;
-  }
-  #handle {
-    margin-bottom: 1em;
-  }
-  /* bericht in de gestuurde chat*/
-  .message-background>p {
-    text-align: left;
-    color: var(--wit);
+    margin-bottom: 0.6em;
 }
-  /* waneer gebruiker aan typen is opmaak*/
-p {
-    font-size: 0.8rem;
+
+#handle {
+    margin-bottom: 1em;
+}
+
+/* bericht in de gestuurde chat */
+.message-background > p {
+    text-align: left;
+}
+
+/* waneer gebruiker aan typen is opmaak*/
+.typing {
+    font-size: 1.5em;
     text-align: center;
     line-height: 1.5;
     color: var(--zwart);
@@ -250,3 +255,4 @@ p {
 .offline{
     display:none;
 }
+
