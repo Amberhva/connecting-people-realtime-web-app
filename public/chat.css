@@ -240,3 +240,13 @@ p {
     color: var(--zwart);
     margin-top: 0.5rem;
 }
+
+
+/* state messages/ helaas werkt dit nog niet normaal groetjes roelie */
+
+.empty{
+    display:none;
+}
+.offline{
+    display:none;
+}

@@ -44,6 +44,7 @@ ioServer.on('connection', (socket) => {
 
   // Luister naar een message van een gebruiker
   socket.on('message', (message) => {
+   
     // Log het ontvangen bericht
     console.log(`user ${socket.id} sent message: ${message}`)
 
