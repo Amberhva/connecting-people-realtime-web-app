@@ -132,14 +132,15 @@ section ul {
     list-style-type: none;
     flex-grow: 2;
     overflow-y: scroll;
-    height: 40rem;
+    height: 50vh;
 }
 
 .message-field {
-    position: absolute;
-    bottom: 1em;
+    /* position: absolute; */
+    /* bottom: 1em; */
     left: 0;
     max-width: 100%;
+    background-color: white;
 }
 
 /* Input field for the messages */
