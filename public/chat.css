@@ -209,9 +209,18 @@ section ul {
     border-radius: 1em;
     width: max-content;
     list-style: none;
+    text-align: left;
 }
-  
-   /* tijd data opmaak*/
+.message-post {
+    display: flex;
+    justify-content: flex-start;
+}
+.message-post.message-send{
+    justify-content: flex-end;
+ 
+}
+
+ /* tijd data opmaak*/
   .time {
     font-weight: 100;
     color: var(--wit);
@@ -224,6 +233,7 @@ section ul {
     color: var(--pinda-kleur);
     margin-bottom: 10px;
   }
+
   #handle {
     margin-bottom: 1em;
   }
@@ -239,4 +249,80 @@ p {
     line-height: 1.5;
     color: var(--zwart);
     margin-top: 0.5rem;
+}
+
+/* States */
+
+span.loading,
+
+span.empty,
+
+span.offline {
+
+  padding: 2rem;
+
+  font-size: 0.7rem;
+
+  font-weight: lighter;
+
+}
+
+ 
+
+span.loading {
+
+  color: light-grey;
+
+  animation: breathe 3s ease-out infinite normal;
+
+}
+
+ 
+
+span.empty {
+
+  display: none;
+
+  color: light-grey;
+
+}
+
+ 
+
+span.offline {
+
+  display: none;
+
+  color: red;
+
+}
+
+ 
+
+@keyframes breathe {
+
+  0% {
+
+    transform: scale(0.9);
+
+  }
+
+  25% {
+
+    transform: scale(1);
+
+  }
+
+  60% {
+
+    transform: scale(0.9);
+
+  }
+
+  100% {
+
+    transform: scale(0.9);
+
+  }
+
 }

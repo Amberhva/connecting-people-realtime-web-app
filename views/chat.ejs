@@ -38,7 +38,7 @@
         <nav class="sub-nav">
             <ul class="sub-nav-items">
                 <li>
-                    <i class="fa-solid fa-house" style="color: #142a45"></i>
+                    <i class="fa fa-home" style="color: #142a45"></i>
                     <span class="icon-text">Home</span>
                 </li>
                 <li>
@@ -46,11 +46,11 @@
                     <span class="icon-text">Vrienden</span>
                 </li>
                 <li>
-                    <i class="fa-solid fa-message" style="color: #142a45"></i>
+                    <i class="fa fa-envelope-o" style="color: #142a45"></i>
                     <span class="icon-text">Berichten</span>
                 </li>
                 <li>
-                    <i class="fa-solid fa-bell" style="color: #142a45"></i>
+                    <i class="fa fa-bell-o" style="color: #142a45"></i>
                     <span class="icon-text">Meldingen</span>
                 </li>
             </ul>
@@ -67,11 +67,18 @@
         <!-- Main start -->
         <main class="chatroom">
             <section class="chat">
+                <span class="loading">Berichten aan het inladen...</span>
+
+                <span class="empty">Er zijn nog geen berichten. Typ iets om te kijken of er iemand reageert.</span>
+
+                <span class="offline">Er gaat iets mis met de verbinding, we proberen de connectie te herstellen...</span>
+
                  <!-- Feedback aan gebruikers waneer iemand aan typen is-->
                 <div id="feedback"></div>
                   <!-- message ul voor de berichten -->
-                <ul class="message"></ul>
+                  <ul class="message"></ul>
                 <form class="message-field">
+
                     <label for="handle" class="title-username">Naam</label>
                     <input id="handle" type="text" name="handle" class="username" placeholder="Vul een naam in..." />
 
