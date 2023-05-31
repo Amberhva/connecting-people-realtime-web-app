@@ -232,7 +232,7 @@ a:visited {
 }
 .message-post.message-send{
     justify-content: flex-end;
- 
+
 }
 
  /* tijd data opmaak*/
@@ -240,15 +240,6 @@ a:visited {
     font-weight: 100;
     color: var(--wit);
   }
-   /* gebruiker naam verstuurd + position*/
-  .message-handle {
-
-/* Time */
-.time {
-    font-size: 0.8em;
-    display: flex;
-    justify-content: flex-end;
-}
 
 /* Username position */
 .message-handle {
@@ -282,4 +273,42 @@ a:visited {
     color: var(--donkerblauw);
     margin-top: 0.5rem;
 }
+  
+/* States */
+span.loading,
+span.empty,
+span.offline {
+  padding: 2rem;
+  font-size: 0.7rem;
+  font-weight: lighter;
+}
+
+span.loading {
+  color: light-grey;
+  animation: breathe 3s ease-out infinite normal;
+}
+
+span.empty {
+  display: none;
+  color: light-grey;
+}
+
+span.offline {
+  display: none;
+  color: red;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(0.9);
   }
+  25% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}

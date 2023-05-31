@@ -1,3 +1,4 @@
+import * as path from "path";
 
 import { Server } from "socket.io";
 import { createServer } from "http";
@@ -5,16 +6,20 @@ import express from "express";
 
 const app = express();
 const http = createServer(app);
-const ioServer = new Server(http);
-
+const ioServer = new Server(http, {
+  connectionStateRecovery: {
+    // De tijdsduur voor recovery bij disconnect
+    maxDisconnectionDuration: 2 * 60 * 1000,
+    // Of middlewares geskipped moeten worden bij recovery (ivm login)
+    skipMiddlewares: true,
+  },
+})
 const port = process.env.PORT || 8000;
 let count = 0;
-
+const historySize = 50
 // Stel ejs in als template engine en geef de 'views' map door
-
 app.set("view engine", "ejs");
 app.set("views", "./views");
-
 // Gebruik de map 'public' voor statische resources
 app.use(express.static("public"));
 
@@ -41,10 +46,10 @@ ioServer.on("connection", (socket) => {
     ioServer.emit("usercount", count);
 
     // Stuur de history
-    client.emit("history", history);
+    socket.emit('history', history)
 
     // Luister naar een message van een gebruiker
-    client.on("message", (message) => {
+    socket.on("message", (message) => {
         // Check de maximum lengte van de historie
         while (history.length > historySize) {
             history.shift();
