@@ -1,7 +1,8 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
-
 # ✨Vini Mini Connecthing People Realtime✨
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+
+<img width="692" alt="Schermafbeelding 2023-05-31 om 21 16 55" src="https://github.com/zenitba/connecting-people-realtime-web-app/assets/112856019/e8c69a3b-3c4f-47f0-b0de-8c1cf4068033">
+
+[Vini Mini](https://vini-mini-realtime.adaptable.app)
 
 ## Inhoudsopgave📚
 
@@ -13,23 +14,49 @@
   * [Licentie 🌐](#licentie)
 
 ## Beschrijving📝
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+
+Ons groepsproject was gericht op het creëren van een interactieve online omgeving waar gebruikers met elkaar konden chatten. We hebben Socket.io, Node.js en JavaScript gebruikt om deze functionaliteit te realiseren. We hebben 2 statische paginas gemaakt dat je de weg leidt naar de chat zoodat de gebruiker en de opdrachtgevers begrijpen hoe je bij de chat terecht komt.
+Het eerste aspect van ons project was het implementeren van een chatfunctionaliteit. Met Socket.io konden we realtime communicatie tussen de gebruikers mogelijk maken. Gebruikers konden berichten versturen en ontvangen. De chat bevat de UI States en extra functies zoals de hoveelheid ouders online enzenovoort.
 
 ## Gebruik 👩🏽‍💻
+
+Vini Mini Gebruikers( Ouders) kunnen nu met elkaar online chatten en hun ervaring delen of voor advies vragen.
 
 **Userstory**
 
 > 2#Connection tussen Vini Minions
 ## Kenmerken ✅
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+Bij het maken van deze opdracht heb ik gebruik gemaakt van:
+
+* 🔌Node
+* 📟Ejs
+* 📡Express
+* 📟 HTML
+* 🎨 CSS
+* 📝JS
+* 🧦 Socket.io
+* ✈️ Adapable
 
 ## Installatie⚙️
 
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+Installeer Node 18.14.0 LTS.
+Fork deze leertaak.
+Code klonen naar Github Desktop.
+Code open in VSCode of een andere editor.
+Terminal open.
+Npm init (typen in je terminal, stappen doorlopen).
+Npm install express nodemon socket.io (typen in je terminal, daarna enter druken).
+.gitignore` (aparte file aanmaken (VSCode, editor) en dan node_modules schrijven in de file)
+Npm start of Npm run dev (typen in je terminal).
+Localhost: 8000 (live link om je website te zien, link van de server).
+Project live zetten met Adaptable. of andere webhost.
 
 ## Bronnen📱
+
+>https://github.com/fdnd-task/connecting-people-realtime-web-app/blob/main/docs/INSTRUCTIONS.md
+
+>https://github.com/ju5tu5/barebonechat
+
 
 ## Licentie 🌐
 
