@@ -108,6 +108,9 @@ a:visited {
 .sub-nav-items span {
     font-size: 0.7em;
 }
+.sub-nav-items > .desktop-terug{
+    display:none;
+}
 
 /* HEADER */
 .information {
@@ -310,4 +313,85 @@ span.offline {
   100% {
     transform: scale(0.9);
   }
+}
+
+/* Mediaquerie desktop Roelie */
+
+@media screen and (min-width: 65em){
+    /* main nav */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--pinda-kleur);
+}
+
+    /* Sub-navigation */
+.sub-nav-items {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    width:7rem;
+    height:100vh;
+    background-color: #EAEAEA;
+    position:relative;
+    top:-5rem;
+}
+
+.sub-nav-items li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1em 1em 0.5em 1em;
+}
+
+.sub-nav-items li i {
+    font-size: 1.3em;
+}
+
+.sub-nav-items span {
+    font-size: 0.7em;
+}
+picture.logo-container{
+    background-color:#EAEAEA;
+    width:6.5rem;
+}
+.sub-nav-items > .desktop-terug{
+    display:flex;
+    position:relative;
+    top:-5rem;
+}
+
+/* upper nav */
+.upper-nav-items {
+    display: none;
+}
+
+
+/* form */
+.message-field {
+    position: absolute;
+    bottom: 1em;
+    left: 10rem;
+    max-width: 100%;
+    background-color: white;
+}
+
+/* extra addings roelie */
+.desktop-chat-container{
+    display:flex;
+    flex-direction:column;
+}
+.desktop-chat-flex{
+    display: flex;
+}
+
+.message-post.message-send{
+    justify-content: flex-end;
+    position:relative;
+    right:8rem;
+}
 }
