@@ -1,4 +1,3 @@
-
 // To make the placeholder disappear in the textfield
 const inputField = document.querySelector(".textfield");
 inputField.addEventListener("focus", function () {
