@@ -249,19 +249,29 @@ a:visited {
 
 /* When a user is typing */
 .typing {
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
     line-height: 1.5;
-    color: var(--zwart);
+    color: var(--donkerblauw);
     margin-top: 0.5rem;
 }
 
-/* state messages/ helaas werkt dit nog niet normaal groetjes roelie */
-.empty {
-    display: none;
-}
+/* States */
+.empty,
 .offline {
-    display: none;
+    text-align: center;
+    max-width: 1em;
+    word-wrap: break-word;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.empty {
+    color: var(--donkerblauw);
+}
+
+.offline {
+    color: red;
 }
 
 /* MEDIA QUERIES */
