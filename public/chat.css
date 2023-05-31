@@ -268,9 +268,11 @@ a:visited {
 
 .empty {
     color: var(--donkerblauw);
+    display: none;
 }
 
 .offline {
+    display: none;
     color: red;
 }
 
