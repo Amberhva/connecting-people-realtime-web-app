@@ -87,6 +87,7 @@ nav{
     letter-spacing: 0.1em;
     font-size: 16px;
     font-weight: lighter;
+    text-transform:none;
 }
 
 .nav-links ul li a{
@@ -123,7 +124,7 @@ nav{
     font-size: 20px;
     color: var(--donkerblauw);
     display: block;
-
+    text-transform:none;
   }
   .sidebar i{
     font-size: 30px;
@@ -138,7 +139,8 @@ h1{
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: bolder;
- 
+  text-transform:none;
+
 }
 
 
@@ -171,12 +173,14 @@ h1{
     margin-right: 15px;
     color: var(--donkerblauw);
     font-weight: bold;
+    text-transform:none;
   }
 .container a {
     font-size: 30px;
     text-align: center;
     margin-right: 25px ;
     color: var(--donkerblauw);
+    text-transform:none;
 }
 
 .post input[type=text]{
@@ -188,6 +192,8 @@ h1{
     box-sizing: border-box;
     margin-right: 85px;
     font-size: 16px;
+    text-transform:none;
+
 }
 
 /* nieuwsbrief zenit */
