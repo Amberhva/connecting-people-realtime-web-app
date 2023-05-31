@@ -7,13 +7,8 @@ inputField.addEventListener("blur", function () {
     inputField.setAttribute("placeholder", "Typ een bericht...");
 });
 
-// State messages
-const emptyState = document.querySelector("span.empty");
-const errorState = document.querySelector("span.offline");
-
 // Socket.io
-
-/*gegevens ophalen van ejs*/
+/* gegevens ophalen van ejs */
 let socket = io();
 let messages = document.querySelector(".message");
 let input = document.querySelector("#message");
@@ -21,11 +16,15 @@ let handle = document.querySelector("#handle");
 let feedback = document.querySelector("#feedback");
 let count = document.querySelector("#count");
 
+// State messages
+const emptyState = document.querySelector(".empty");
+const errorState = document.querySelector(".offline");
+
 /*De form haal de bericht op die in de ejs staat via de server */
 document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
     socket.emit("message", {
-        /*In de ejs haalt hij de waarde van de gebruiker op(gebruiksnaam) en de input(bericht)*/
+        /*In de ejs haalt hij de waarde van de gebruiker op (gebruiksnaam) en de input (bericht)*/
         input: input.value,
         handle: handle.value,
         /*haalt de tijd op mee mee te sturen met het bericht*/
@@ -34,6 +33,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
     /*De value is wat de gebruiker als bericht wilt sturen*/
     input.value = "";
 });
+
 /*bericht verstuurd met gebruiksnaam en tijd*/
 socket.on("message", (data) => {
     feedback.innerHTML = "";
@@ -47,16 +47,79 @@ socket.on("message", (data) => {
     /*section krijgt scrol functie voor de berichten*/
     messages.scrollTop = messages.scrollHeight;
 });
+
 /*waneer gebruiker typt*/
 input.addEventListener("keypress", function () {
     socket.emit("typing", handle.value);
 });
+
 /*melding waneer andere gebruiker aan het typt is */
 socket.on("typing", (data) => {
     feedback.innerHTML = `<p class="typing"><em> ${data} is aan het typen...</em></p>`;
 });
+
+// How many users are online
 socket.on("usercount", (data) => {
     count.innerHTML = data;
+});
+
+// Luister naar de historie van de chat
+ioServer.on("history", (history) => {
+    // Als er geen historie is tonen we de empty state
+    if (history.length === 0) {
+        loadingState.style.display = "none";
+        emptyState.style.display = "inline";
+
+        // Er zijn berichten, haal de states weg en loop ze op het scherm
+    } else {
+        loadingState.style.display = "none";
+        emptyState.style.display = "none";
+        history.forEach((message) => {
+            addMessage(message);
+        });
+    }
+});
+
+// Luister naar berichten van de server
+ioServer.on("message", (message) => {
+    loadingState.style.display = "none";
+    emptyState.style.display = "none";
+    addMessage(message);
+});
+
+// Er gaat iets mis bij het verbinden
+ioServer.io.on("error", (error) => {
+    loadingState.style.display = "none";
+    emptyState.style.display = "none";
+    errorState.style.display = "inline";
+});
+
+// Poging om opnieuw te verbinden
+ioServer.io.on("reconnect_attempt", (attempt) => {
+    console.log("attempting reconnection");
+});
+
+// Verbinding geslaagd
+ioServer.io.on("reconnect", (attempt) => {
+    loadingState.style.display = "none";
+    emptyState.style.display = "none";
+    errorState.style.display = "none";
+});
+
+// De server stuurt doorlopend pings om te kijken of de boel online is
+ioServer.io.on("ping", () => {
+    // ...
+});
+
+// Als het reconnecten niet goed gaat
+ioServer.io.on("reconnect_error", (error) => {
+    // ...
+});
+
+// Reconnecten is een aantal keer (reconnectionAttempts) geprobeerd en faalt
+// het reconnecten stopt, misschien handig voor een 'probeer opnieuw' knop.
+ioServer.io.on("reconnect_failed", () => {
+    // ...
 });
 
 function addMessage(message) {

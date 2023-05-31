@@ -242,7 +242,7 @@ a:visited {
     margin-bottom: 0.6em;
 }
 
-/* bericht in de gestuurde chat */
+/* I don't know what this is */
 .message-background > p {
     text-align: left;
 }
@@ -263,3 +263,5 @@ a:visited {
 .offline {
     display: none;
 }
+
+/* MEDIA QUERIES */
