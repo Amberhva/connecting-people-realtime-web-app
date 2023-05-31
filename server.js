@@ -16,6 +16,9 @@ const ioServer = new Server(http, {
 })
 const port = process.env.PORT || 8000;
 let count = 0;
+
+let history = []
+
 const historySize = 50
 // Stel ejs in als template engine en geef de 'views' map door
 app.set("view engine", "ejs");
@@ -46,7 +49,7 @@ ioServer.on("connection", (socket) => {
     ioServer.emit("usercount", count);
 
     // Stuur de history
-    socket.emit('history', history)
+    ioServer.emit('history', history)
 
     // Luister naar een message van een gebruiker
     socket.on("message", (message) => {
