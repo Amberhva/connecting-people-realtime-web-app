@@ -64,7 +64,7 @@ socket.on("usercount", (data) => {
 });
 
 // Luister naar de historie van de chat
-ioServer.on("history", (history) => {
+socket.on("history", (history) => {
     // Als er geen historie is tonen we de empty state
     if (history.length === 0) {
         loadingState.style.display = "none";
@@ -81,44 +81,44 @@ ioServer.on("history", (history) => {
 });
 
 // Luister naar berichten van de server
-ioServer.on("message", (message) => {
+socket.on("message", (message) => {
     loadingState.style.display = "none";
     emptyState.style.display = "none";
     addMessage(message);
 });
 
 // Er gaat iets mis bij het verbinden
-ioServer.io.on("error", (error) => {
+socket.io.on("error", (error) => {
     loadingState.style.display = "none";
     emptyState.style.display = "none";
     errorState.style.display = "inline";
 });
 
 // Poging om opnieuw te verbinden
-ioServer.io.on("reconnect_attempt", (attempt) => {
+socket.io.on("reconnect_attempt", (attempt) => {
     console.log("attempting reconnection");
 });
 
 // Verbinding geslaagd
-ioServer.io.on("reconnect", (attempt) => {
+socket.io.on("reconnect", (attempt) => {
     loadingState.style.display = "none";
     emptyState.style.display = "none";
     errorState.style.display = "none";
 });
 
 // De server stuurt doorlopend pings om te kijken of de boel online is
-ioServer.io.on("ping", () => {
+socket.io.on("ping", () => {
     // ...
 });
 
 // Als het reconnecten niet goed gaat
-ioServer.io.on("reconnect_error", (error) => {
+socket.io.on("reconnect_error", (error) => {
     // ...
 });
 
 // Reconnecten is een aantal keer (reconnectionAttempts) geprobeerd en faalt
 // het reconnecten stopt, misschien handig voor een 'probeer opnieuw' knop.
-ioServer.io.on("reconnect_failed", () => {
+socket.io.on("reconnect_failed", () => {
     // ...
 });
 
