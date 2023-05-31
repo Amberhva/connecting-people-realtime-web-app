@@ -63,15 +63,6 @@ ioServer.on("connection", (socket) => {
         ioServer.emit("message", message);
     });
 
-    // Luister naar een message van een gebruiker
-    socket.on("message", (message) => {
-        // Log het ontvangen bericht
-        console.log(`user ${socket.id} sent message: ${message}`);
-
-        // Verstuur het bericht naar alle clients
-        ioServer.emit("message", message);
-    });
-
     // Luister naar een disconnect van een gebruiker
     socket.on("disconnect", () => {
         // Log de disconnect

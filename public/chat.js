@@ -1,3 +1,4 @@
+
 // To make the placeholder disappear in the textfield
 const inputField = document.querySelector(".textfield");
 inputField.addEventListener("focus", function () {
@@ -11,7 +12,7 @@ inputField.addEventListener("blur", function () {
 /* gegevens ophalen van ejs */
 
 let socket = io();
-let messages = document.querySelector(".message");
+let messages = document.querySelector("section ul");
 let input = document.querySelector("#message");
 let handle = document.querySelector("#handle");
 let feedback = document.querySelector("#feedback");
@@ -38,22 +39,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
     input.value = "";
 });
 
-/*bericht verstuurd met gebruiksnaam en tijd*/
-socket.on("message", (data) => {
-    feedback.innerHTML = "";
-    /*hier geeft ie aan hoe de layout eruit gaat zien waneer de bericht wordt gestuurd*/
-    messages.innerHTML += `
-    <li class="message-post message-${data.user === socket.id ? 'send' : 'recieved'}">
-    <div class="message-background">
-      <p class="time">${data.time}</p>
-      <p>${data.input}</p>
-    </div>
-    <h3 class="message-handle">${data.handle}</h3>
-    <li>
-    `
-    /*section krijgt scrol functie voor de berichten*/
-    messages.scrollTop = messages.scrollHeight;
-});
+
 
 /*waneer gebruiker typt*/
 input.addEventListener("keypress", function () {
@@ -81,6 +67,7 @@ socket.on("history", (history) => {
     } else {
         loadingState.style.display = "none";
         emptyState.style.display = "none";
+
         history.forEach((message) => {
             addMessage(message);
         });
@@ -131,14 +118,15 @@ socket.io.on("reconnect_failed", () => {
 
 
 function addMessage(message) {
+  messages.innerHTML += `
+    <li class="message-post message-${message.user === socket.id ? 'send' : 'recieved'}">
+    <div class="message-background">
+      <p class="time">${message.time}</p>
+      <p>${message.input}</p>
+    </div>
+    <h3 class="message-handle">${message.handle}</h3>
+    <li>
+    `
 
-  // Helaas lijkt de empty state niet te werken, wie snapt wat er fout is?
-  if (messages.children.length === 0) {
-      emptyState.style.display = "inline";
-  } else {
-      emptyState.style.display = "none";
-  }
-
-  messages.appendChild(Object.assign(document.createElement("li"), { textContent: message }));
   messages.scrollTop = messages.scrollHeight;
 }
