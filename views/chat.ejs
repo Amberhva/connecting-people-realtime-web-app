@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <title>Chatroom Vini Mini</title>
 
         <!-- Link to the stylesheet -->
@@ -17,7 +18,7 @@
         <nav class="main-nav">
             <!-- Logo Vini Mini -->
             <picture class="logo-container">
-                <a href="#" class="link-to-home">
+                <a href="/" class="link-to-home">
                     <img src="/img/logo.png" alt="Logo Vini Mini" class="logo-vini-mini" width="60" height="50" />
                 </a>
             </picture>
@@ -29,8 +30,10 @@
                     <span class="icon-text">Zoeken</span>
                 </li>
                 <li>
-                    <i class="fa-solid fa-arrow-left" style="color: #142a45"></i>
-                    <span class="icon-text">Terug</span>
+                    <a href="community">
+                        <i class="fa-solid fa-arrow-left" style="color: #142a45"></i>
+                        <span class="icon-text">Terug</span>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -67,28 +70,28 @@
         <!-- Main start -->
         <main class="chatroom">
             <section class="chat">
-                <span class="loading">Berichten aan het inladen...</span>
 
+                <!-- Empty state and error state (not working yet) -->
                 <span class="empty">Er zijn nog geen berichten. Typ iets om te kijken of er iemand reageert.</span>
-
                 <span class="offline">Er gaat iets mis met de verbinding, we proberen de connectie te herstellen...</span>
 
-                 <!-- Feedback aan gebruikers waneer iemand aan typen is-->
+                <!-- Feedback aan gebruikers waneer iemand aan typen is-->
                 <div id="feedback"></div>
-                  <!-- message ul voor de berichten -->
-                  <ul class="message"></ul>
+                <!-- ul for the messages -->
+                <ul class="message"></ul>
                 <form class="message-field">
 
                     <label for="handle" class="title-username">Naam</label>
                     <input id="handle" type="text" name="handle" class="username" placeholder="Vul een naam in..." />
 
                     <div class="container">
-                        <input id="message" type="text" autocomplete="off" class="textfield" placeholder="Typ een bericht..." />
+                        <input id="message" type="text" autocomplete="off" class="textfield" minlength="1" required placeholder="Typ een bericht..." />
                         <button class="send"><i class="fa-regular fa-paper-plane" style="color: #ffffff"></i></button>
                     </div>
                 </form>
             </section>
         </main>
+
         <!-- Link to the script -->
         <script src="/socket.io/socket.io.js" defer></script>
         <script src="/chat.js" defer></script>
