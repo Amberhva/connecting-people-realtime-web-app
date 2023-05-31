@@ -39,17 +39,25 @@ Bij het maken van deze opdracht heb ik gebruik gemaakt van:
 
 ## Installatie⚙️
 
-Installeer Node 18.14.0 LTS.
-Fork deze leertaak.
-Code klonen naar Github Desktop.
-Code open in VSCode of een andere editor.
-Terminal open.
-Npm init (typen in je terminal, stappen doorlopen).
-Npm install express nodemon socket.io (typen in je terminal, daarna enter druken).
-.gitignore` (aparte file aanmaken (VSCode, editor) en dan node_modules schrijven in de file)
-Npm start of Npm run dev (typen in je terminal).
-Localhost: 8000 (live link om je website te zien, link van de server).
-Project live zetten met Adaptable. of andere webhost.
+1.Installeer` Node.`
+
+2.Fork deze leertaak.
+
+3.Code klonen naar Github Desktop.
+
+4.Code open in VSCode of een andere editor.
+
+5.Terminal open.
+
+6`.Npm install` ` Npm install Socket.io` (typen in je terminal, daarna enter druken).
+
+7.`gitignore `(aparte file aanmaken (VSCode, editor) en dan node_modules schrijven in de file)
+
+8.Npm start (typen in je terminal).
+
+9.`Localhost:8000` (live link om je website te zien, link van de server).
+
+10.Project live zetten met `Adaptable`
 
 ## Bronnen📱
 
