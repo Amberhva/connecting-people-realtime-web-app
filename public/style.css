@@ -121,22 +121,20 @@ nav{
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
-    color: var(--pinda-kleur);
+    color: var(--donkerblauw);
     display: block;
 
   }
   .sidebar i{
     font-size: 30px;
   }
-  .sidebar a:hover {
-    color: var(--donkerblauw);
-  }
+ 
 /* titel */
 h1{
   text-align: center; 
   margin-top: -11.5rem;
   margin-bottom: 2rem;
-  color: var(--pinda-kleur);
+  color: var(--donkerblauw);
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: bolder;
@@ -171,14 +169,14 @@ h1{
   .container span {
     font-size: 20px;
     margin-right: 15px;
-    color: var(--pinda-kleur);
+    color: var(--donkerblauw);
     font-weight: bold;
   }
 .container a {
     font-size: 30px;
     text-align: center;
     margin-right: 25px ;
-    color: var(--pinda-kleur);
+    color: var(--donkerblauw);
 }
 
 .post input[type=text]{
