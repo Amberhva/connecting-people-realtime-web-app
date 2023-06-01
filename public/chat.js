@@ -1,11 +1,10 @@
 // To make the placeholder disappear in the textfield
 const inputField = document.querySelector(".textfield");
 inputField.addEventListener("focus", function () {
-inputField.removeAttribute("placeholder");
+    inputField.removeAttribute("placeholder");
 });
 inputField.addEventListener("blur", function () {
-  inputField.setAttribute("placeholder", "Typ een bericht...");
-
+    inputField.setAttribute("placeholder", "Typ een bericht...");
 });
 // Socket.io
 /* gegevens ophalen van ejs */
@@ -18,7 +17,7 @@ let feedback = document.querySelector("#feedback");
 let count = document.querySelector("#count");
 
 // State messages
-const loadingState = document.querySelector('span.loading')
+const loadingState = document.querySelector("span.loading");
 const emptyState = document.querySelector(".empty");
 const errorState = document.querySelector(".offline");
 
@@ -37,8 +36,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
     /*De value is wat de gebruiker als bericht wilt sturen*/
     input.value = "";
 });
-
-
 
 /*waneer gebruiker typt*/
 input.addEventListener("keypress", function () {
@@ -115,17 +112,16 @@ socket.io.on("reconnect_failed", () => {
     // ...
 });
 
-
 function addMessage(message) {
-  messages.innerHTML += `
-    <li class="message-post message-${message.user === socket.id ? 'send' : 'recieved'}">
-    <div class="message-background">
-      <p class="time">${message.time}</p>
+    messages.innerHTML += `
+    <li class="message-post message-${message.user === socket.id ? "send" : "recieved"}">
+    <div class="message-background">    
       <p>${message.input}</p>
+      <p class="time">${message.time}</p>
     </div>
     <h3 class="message-handle">${message.handle}</h3>
     <li>
-    `
+    `;
 
-  messages.scrollTop = messages.scrollHeight;
+    messages.scrollTop = messages.scrollHeight;
 }

@@ -227,19 +227,24 @@ a:visited {
     text-align: left;
 }
 
+.message-recieved .message-handle {
+    display: flex;
+}
+
 .message-post {
     display: flex;
     justify-content: flex-start;
 }
-.message-post.message-send{
+.message-post.message-send {
     justify-content: flex-end;
 }
 
- /* tijd data opmaak*/
-  .time {
+/* tijd data opmaak*/
+.time {
+    font-size: 0.8em;
     font-weight: 100;
-    color: var(--wit);
-  }
+    color: var(--donkerblauw);
+}
 
 /* Username position */
 .message-handle {
@@ -248,16 +253,17 @@ a:visited {
     text-align: left;
     color: var(--pinda-kleur);
     margin-bottom: 10px;
-  }
+}
 
-  #handle {
+#handle {
     margin-bottom: 1em;
-  }
-  /* bericht in de gestuurde chat*/
-  .message-background>p {
+}
+
+/* bericht in de gestuurde chat*/
+.message-background > p {
     text-align: left;
-    color: var(--wit);
-    margin-bottom: 0.6em;
+    color: var(--donkerblauw);
+    margin-bottom: 0.5em;
 }
 
 /* I don't know what this is */
@@ -271,44 +277,162 @@ a:visited {
     text-align: center;
     line-height: 1.5;
     color: var(--donkerblauw);
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
 }
-  
+
 /* States */
 span.loading,
 span.empty,
 span.offline {
-  padding: 2rem;
-  font-size: 0.7rem;
-  font-weight: lighter;
+    padding: 2rem;
+    font-size: 0.7rem;
+    font-weight: lighter;
 }
 
 span.loading {
-  color: light-grey;
-  animation: breathe 3s ease-out infinite normal;
+    color: light-grey;
+    animation: breathe 3s ease-out infinite normal;
 }
 
 span.empty {
-  display: none;
-  color: light-grey;
+    display: none;
+    color: light-grey;
 }
 
 span.offline {
-  display: none;
-  color: red;
+    display: none;
+    color: red;
 }
 
 @keyframes breathe {
-  0% {
-    transform: scale(0.9);
-  }
-  25% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(0.9);
-  }
+    0% {
+        transform: scale(0.9);
+    }
+    25% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.sub-nav-items > .desktop-terug {
+    display: none;
+}
+
+/* Mediaquerie desktop Roelie */
+
+@media screen and (min-width: 65em) {
+    /* main nav */
+
+    .main-nav {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        background-color: var(--pinda-kleur);
+    }
+
+    /* Sub-navigation */
+
+    .sub-nav-items {
+        display: flex;
+
+        flex-direction: column;
+
+        list-style: none;
+
+        justify-content: center;
+
+        align-items: center;
+
+        width: 7rem;
+
+        height: 100vh;
+
+        background-color: #eaeaea;
+
+        position: relative;
+
+        top: -5rem;
+    }
+
+    .sub-nav-items li {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        margin: 1em 1em 0.5em 1em;
+    }
+
+    .sub-nav-items li i {
+        font-size: 1.3em;
+    }
+
+    .sub-nav-items span {
+        font-size: 0.7em;
+    }
+
+    picture.logo-container {
+        background-color: #eaeaea;
+
+        width: 6.5rem;
+    }
+
+    .sub-nav-items > .desktop-terug {
+        display: flex;
+
+        position: relative;
+
+        top: -5rem;
+    }
+
+    /* upper nav */
+
+    .upper-nav-items {
+        display: none;
+    }
+
+    /* form */
+
+    .message-field {
+        position: absolute;
+
+        bottom: 1em;
+
+        left: 10rem;
+
+        max-width: 100%;
+
+        background-color: white;
+    }
+
+    /* extra addings roelie */
+
+    .desktop-chat-container {
+        display: flex;
+
+        flex-direction: column;
+    }
+
+    .desktop-chat-flex {
+        display: flex;
+    }
+
+    .message-post.message-send {
+        justify-content: flex-end;
+
+        position: relative;
+
+        right: 8rem;
+    }
 }

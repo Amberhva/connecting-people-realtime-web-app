@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="nl">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <title>Chatroom Vini Mini</title>
 
         <!-- Link to the stylesheet -->
@@ -17,6 +17,7 @@
         <!-- Start navigation -->
         <nav class="main-nav">
             <!-- Logo Vini Mini -->
+
             <picture class="logo-container">
                 <a href="/" class="link-to-home">
                     <img src="/img/logo.png" alt="Logo Vini Mini" class="logo-vini-mini" width="60" height="50" />
@@ -27,88 +28,90 @@
             <ul class="upper-nav-items">
                 <li>
                     <i class="fa-solid fa-magnifying-glass" style="color: #142a45"></i>
+
                     <span class="icon-text">Zoeken</span>
                 </li>
                 <li>
                     <a href="community">
                         <i class="fa-solid fa-arrow-left" style="color: #142a45"></i>
+
                         <span class="icon-text">Terug</span>
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <!-- deskop container  -->
-<div class="desktop-chat-flex">
+        <!-- Desktop container  -->
+        <div class="desktop-chat-flex">
+            <nav class="sub-nav">
+                <ul class="sub-nav-items">
+                    <li class="desktop-terug">
+                        <a href="community">
+                            <i class="fa-solid fa-arrow-left" style="color: #142a45"></i>
+                            <span class="icon-text">Terug</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-home" style="color: #142a45"></i>
+                        <span class="icon-text">Home</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-group" style="color: #142a45"></i>
+                        <span class="icon-text">Vrienden</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope" style="color: #142a45"></i>
 
-        <nav class="sub-nav">
-            <ul class="sub-nav-items">
-                <li class="desktop-terug">
-                    <a href="community">
-                        <i class="fa-solid fa-arrow-left"  style="color: #142a45"></i>
-                        <span class="icon-text">Terug</span>
-                    </a>
-                </li>
-                <li>
-                    <i class="fa fa-home" style="color: #142a45"></i>
-                    <span class="icon-text">Home</span>
-                </li>
-                <li>
-                    <i class="fa-solid fa-user-group" style="color: #142a45"></i>
-                    <span class="icon-text">Vrienden</span>
-                </li>
-                <li>
-                    <i class="fa fa-envelope-o" style="color: #142a45"></i>
-                    <span class="icon-text">Berichten</span>
-                </li>
-                <li>
-                    <i class="fa fa-bell-o" style="color: #142a45"></i>
-                    <span class="icon-text">Meldingen</span>
-                </li>
-            </ul>
-        </nav>
-        <!-- End navigation -->
+                        <span class="icon-text">Berichten</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bell" style="color: #142a45"></i>
+                        <span class="icon-text">Meldingen</span>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End navigation -->
 
+            <!-- DESKTOP  -->
+            <div class="desktop-chat-container">
+                <!-- Header start -->
+                <header class="information">
+                    <h1 class="chat-title">Chat met ouders en deel je ervaringen!</h1>
 
-        <!-- desktop  -->
-    <div class="desktop-chat-container">   
+                    <h2 class="online">Aantal online: <span id="count">0</span> ouder(s) online.</h2>
+                </header>
+                <!-- Header end -->
 
-        <!-- Header start -->
-        <header class="information">
-            <h1 class="chat-title">Chat met ouders en deel je ervaringen!</h1>
-            <h2 class="online">Aantal online: <span id="count">0</span> ouder(s) online.</h2>
-        </header>
-        <!-- Header end -->
+                <!-- Main start -->
+                <main class="chatroom">
+                    <section class="chat">
+                        <!-- Empty state and error state (not working yet) -->
+                        <span class="loading">Berichten aan het inladen...</span>
+                        <span class="empty">Er zijn nog geen berichten. Typ iets om te kijken of er iemand reageert.</span>
+                        <span class="offline">Er gaat iets mis met de verbinding, we proberen de connectie te herstellen...</span>
 
-        <!-- Main start -->
-        <main class="chatroom">
-            <section class="chat">
+                        <!-- Feedback aan gebruikers waneer iemand aan typen is-->
+                        <div id="feedback"></div>
 
-                <!-- Empty state and error state (not working yet) -->
-                <span class="loading">Berichten aan het inladen...</span>
-                <span class="empty">Er zijn nog geen berichten. Typ iets om te kijken of er iemand reageert.</span>
-                <span class="offline">Er gaat iets mis met de verbinding, we proberen de connectie te herstellen...</span>
+                        <!-- ul for the messages -->
+                        <ul class="message"></ul>
+                        <form class="message-field">
+                            <label for="handle" class="title-username">Naam</label>
 
-                <!-- Feedback aan gebruikers waneer iemand aan typen is-->
-                <div id="feedback"></div>
-                <!-- ul for the messages -->
-                <ul class="message"></ul>
-                <form class="message-field">
+                            <input id="handle" type="text" name="handle" class="username" placeholder="Vul een naam in..." />
 
-                    <label for="handle" class="title-username">Naam</label>
-                    <input id="handle" type="text" name="handle" class="username" placeholder="Vul een naam in..." />
+                            <div class="container">
+                                <input id="message" type="text" autocomplete="off" class="textfield" minlength="1" required placeholder="Typ een bericht..." />
 
-                    <div class="container">
-                        <input id="message" type="text" autocomplete="off" class="textfield" minlength="1" required placeholder="Typ een bericht..." />
-                        <button class="send" title="verstuur"><i class="fa-regular fa-paper-plane" style="color: #ffffff"></i></button>
-                    </div>
-                </form>
-            </section>
-        </main>
+                                <button class="send" title="verstuur"><i class="fa-regular fa-paper-plane" style="color: #ffffff"></i></button>
+                            </div>
+                        </form>
+                    </section>
+                </main>
+            </div>
+        </div>
 
-    </div>     
-</div>        
-        <!-- Link to the script -->
+        <!-- Link to the scripts -->
         <script src="/socket.io/socket.io.js" defer></script>
         <script src="/chat.js" defer></script>
     </body>
