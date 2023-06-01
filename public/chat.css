@@ -227,8 +227,35 @@ a:visited {
     text-align: left;
 }
 
+.message-recieved {
+    margin-bottom: 0.5em;
+}
+
+.message-post {
+    margin-bottom: 0.5em;
+}
+
+.message-recieved .message-handle {
+    display: grid;
+    place-items: left;
+    justify-self: start;
+    margin-left: 0.5em;
+}
+
 .message-recieved .message-handle {
     display: flex;
+}
+
+.message-post .time {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message-post .message-handle {
+    display: grid;
+    place-items: end end;
+    justify-self: end;
+    margin-left: 0.5em;
 }
 
 .message-post {
