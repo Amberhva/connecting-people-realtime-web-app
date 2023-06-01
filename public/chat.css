@@ -237,13 +237,8 @@ a:visited {
 
 .message-recieved .message-handle {
     display: grid;
-    place-items: left;
+    place-items: start start;
     justify-self: start;
-    margin-left: 0.5em;
-}
-
-.message-recieved .message-handle {
-    display: flex;
 }
 
 .message-post .time {
@@ -262,6 +257,7 @@ a:visited {
     display: flex;
     justify-content: flex-start;
 }
+
 .message-post.message-send {
     justify-content: flex-end;
 }
@@ -354,50 +350,32 @@ span.offline {
 
 @media screen and (min-width: 65em) {
     /* main nav */
-
     .main-nav {
         display: flex;
-
         justify-content: space-between;
-
         align-items: center;
-
         background-color: var(--pinda-kleur);
     }
 
     /* Sub-navigation */
-
     .sub-nav-items {
         display: flex;
-
         flex-direction: column;
-
         list-style: none;
-
         justify-content: center;
-
         align-items: center;
-
         width: 7rem;
-
         height: 100vh;
-
         background-color: #eaeaea;
-
         position: relative;
-
         top: -5rem;
     }
 
     .sub-nav-items li {
         display: flex;
-
         flex-direction: column;
-
         align-items: center;
-
         text-align: center;
-
         margin: 1em 1em 0.5em 1em;
     }
 
@@ -417,37 +395,27 @@ span.offline {
 
     .sub-nav-items > .desktop-terug {
         display: flex;
-
         position: relative;
-
         top: -5rem;
     }
 
     /* upper nav */
-
     .upper-nav-items {
         display: none;
     }
 
     /* form */
-
     .message-field {
         position: absolute;
-
         bottom: 1em;
-
         left: 10rem;
-
         max-width: 100%;
-
         background-color: white;
     }
 
     /* extra addings roelie */
-
     .desktop-chat-container {
         display: flex;
-
         flex-direction: column;
     }
 
@@ -457,9 +425,7 @@ span.offline {
 
     .message-post.message-send {
         justify-content: flex-end;
-
         position: relative;
-
         right: 8rem;
     }
 }
