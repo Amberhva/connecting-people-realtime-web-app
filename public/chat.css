@@ -237,8 +237,10 @@ a:visited {
 
 .message-recieved .message-handle {
     display: grid;
-    place-items: start start;
+    grid-row: 2;
+    grid-column: 1;
     justify-self: start;
+    align-self: end;
 }
 
 .message-post .time {
@@ -276,10 +278,6 @@ a:visited {
     text-align: left;
     color: var(--pinda-kleur);
     margin-bottom: 10px;
-}
-
-#handle {
-    margin-bottom: 1em;
 }
 
 /* bericht in de gestuurde chat*/
